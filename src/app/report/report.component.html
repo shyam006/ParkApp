@@ -1,0 +1,27 @@
+  <div class="container pl-5"> 
+    <h2>Report</h2>
+    <div class="row mb-3">
+      <div class="col-3">
+        <input class="form-control" name="FromDate" type="datetime" ngModel #FromDate>
+      </div>
+      <div class="col-3">
+        <input class="form-control" name="ToDate" type="date" ngModel #ToDate (change)="GetDate(FromDate.value,ToDate.value)">
+      </div>
+    </div>
+    <table class="table table-striped table-hover">
+      <thead>
+        <td>Sno</td>
+        <td>Vechile Number</td>
+        <td>Date</td>
+        <td>Type</td>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ReportData of reportInfo; let myindex = index">
+          <td>{{myindex+1}}</td>
+          <td>{{ReportData['vehicleNo']}}</td>
+          <td name="ParkingDate" #ParkingDate>{{ReportData['Date'] | date:'dd-MM-y hh:mm:ss a'}}</td>
+          <td>{{ReportData['Type']=='D'?'Daily':'Monthly'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

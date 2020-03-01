@@ -1,0 +1,27 @@
+<aside class="close">
+    <nav>
+      <h3 class="aside-head"><img src="assets/icons/logo.png" id="logo">Parking Stand</h3>
+      <a routerLink="DailyPass">Daily Pass</a>
+      <a routerLink="MonthlyPass">Monthly Pass</a>
+      <a routerLink="ParkReport">Report</a>
+      <a routerLink="Setting">Settings</a>
+    </nav>
+  </aside>
+  <div id="content" class="aside_bar">
+     <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <ul class="navbar-nav mr-auto mt-2 mr-3 mt-lg-0">
+              <li class="nav-item active">
+                <img src="assets/icons/menu.svg" (click)="clickCallback()">
+              </li>
+          </ul>
+          <a class="navbar-brand">Parking Stand</a>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+              <img class="rounded-circle p-2" src="assets/icons/Cycle.svg">
+            </form>
+          </div>
+        </nav>
+    </div>
+<router-outlet></router-outlet>

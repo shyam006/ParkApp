@@ -1,0 +1,97 @@
+<div class="container setting-div">
+    <div class="page-section">
+        <div class="row">
+            <div class="col-md-2">
+
+            </div>
+          <div class="col-lg-3">
+            <div class="card card-fluid">
+              <h6 class="card-header"> Settings </h6>
+              <nav class="nav nav-tabs flex-column">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                    <a class="nav-link" id="v-pills-Passcharge-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Pass-Charge</a>
+                    <a class="nav-link" id="v-pills-Report-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Report</a>
+                  </div>
+              </nav>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="card card-fluid">
+              <h6 class="card-header"> Public Profile </h6>
+              <div class="card-body">
+                <div class="media mb-3">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade active show" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <div class="card-body">
+                                <form #ProfileUpdate="ngForm" (ngSubmit)="UpdateProfile(ProfileUpdate.value)">
+                                  <div class="form-row">
+                                    <label for="input01" class="col-md-3">Cover image</label>
+                                    <div class="col-md-9 mb-3">
+                                      <div class="custom-file">
+                                        <input type="file" class="custom-file-input" name="avatar" id="input01" ngModel ng2FileSelect [uploader]="uploader">
+                                        <label class="custom-file-label" for="input01">Choose cover</label>
+                                      </div>
+                                      <small class="text-muted">Upload a new cover image, JPG 1200x300</small>
+                                    </div>
+                                  </div>
+                              
+                                  <div class="form-row">
+                                    <label for="input02" class="col-md-3">Company Name</label>
+                                    <div class="col-md-9 mb-3">
+                                      <input type="text" class="form-control" id="input02" name="Companyname" [(ngModel)]='Companyname'> </div>
+                                  </div>
+                              
+                                  <div class="form-row">
+                                    <label for="input03" class="col-md-3">Address</label>
+                                    <div class="col-md-9 mb-3">
+                                      <textarea type="text" name ="Address" class="form-control" id="input03" [(ngModel)]="Address"></textarea>
+                                    </div>
+                                  </div>
+                                  <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary ml-auto" (click)="uploader.uploadAll()">Update Profile</button>
+                                  </div>
+                                </form>
+                              </div>  
+                        </div>
+                        <div class="tab-pane fade w-100" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-Passcharge-tab">
+ 
+                          <div class="card-body">
+                            <form #ChargeUpdate="ngForm" (ngSubmit)="UpdateCharge(ChargeUpdate.value)">
+                              <div class="form-row">
+                                <label for="input12" class="col-md-5">Daily Charges</label>
+                                <div class="col-md-7 mb-3">
+                                  <input type="text" class="form-control" id="input12" name="DailyCharge" [(ngModel)]='DailyCharge'> </div>
+                              </div>
+                          
+                              <div class="form-row">
+                                <label for="input13" class="col-md-5">Monthly Charges</label>
+                                <div class="col-md-7 mb-3 custom-file">
+                                  <input type="text" class=" form-control" id="input13" name="MonthlyCharge" [(ngModel)]='MonthlyCharge'> 
+                                </div>
+                              </div>
+                              <div class="form-actions">
+                                <button type="submit" class="btn btn-primary ml-auto">Update Charges</button>
+                              </div>
+                            </form>
+                          </div>  
+ 
+                          
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-Report-tab">
+
+                        </div>
+                      </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+
